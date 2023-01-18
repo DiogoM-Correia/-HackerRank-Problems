@@ -32,12 +32,14 @@ class Result
         for (int i = 0; i < n.Length; i++)
         {
             // The final point is to some k times each value in the initial string
+            // - '0' is not the most beautifull way but it works
             sum += (n[i] - '0') * k;
         }
         
         string concat = sum.ToString();
         int len = concat.Length;
-                
+             
+        // Sum the char in the string until there is only 1
         while (len > 1)
         {
             sum = 0;
@@ -50,6 +52,7 @@ class Result
             len = concat.Length;
         }
         
+        // Need to convert to a normal int so it matches with needed output
         return (int) sum;
     }
 
